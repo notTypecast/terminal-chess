@@ -4,13 +4,9 @@ class Rook(Piece):
 
 	#assumes square and color are correct values
 	def __init__(self, square, color):
-		super().__init__(square, color)
-		self.piece_chr = "♜" if self.color == "white" else "♖"
+		super().__init__(square, color, "♜" if color == "white" else "♖")
 
 		self.HASMOVED = False
-
-	def __repr__(self):
-		return self.piece_chr
 
 	def validateMove(self, newSquare):
 		#ensure either column, or row is same, but not both

@@ -371,7 +371,7 @@ class Board:
 		#list of squares that enemy needs to occupy to block attack
 		squaresToOccupy = Board._getSquaresBetween(attackingPiece.square, enemyKing.square)
 
-		#if some square is exists that can block the attack
+		#if some square exists that can block the attack
 		if squaresToOccupy:
 			#determine which enemy pieces can occupy one of those squares
 			for enemyPiece in enemyAttacks:

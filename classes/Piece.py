@@ -5,9 +5,13 @@ Abstract class representing a chess piece
 class Piece(metaclass = abc.ABCMeta):
 	
 	#assumes passed square and color are correct values
-	def __init__(self, square, color):
+	def __init__(self, square, color, piece_chr):
 		self.square = square #tuple of board array indexes
 		self.color = color #"white" or "black"
+		self.piece_chr = piece_chr #utf-8 chr representation of piece
+
+	def __repr__(self):
+		return self.piece_chr
 
 	#PUBLIC
 	#accepts new square

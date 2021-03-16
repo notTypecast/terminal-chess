@@ -4,13 +4,9 @@ class Knight(Piece):
 
 	#assumes square and color are correct values
 	def __init__(self, square, color):
-		super().__init__(square, color)
-		self.piece_chr = "♞" if self.color == "white" else "♘"
+		super().__init__(square, color, "♞" if color == "white" else "♘")
 		self.opposite_diff_value = lambda x: 2 if abs(x) == 1 else 1 #get opposite value for row/column difference (if one is 2, other is 1, vice versa)
 		self.row_difference_values = (-2, -1, 1, 2)
-
-	def __repr__(self):
-		return self.piece_chr
 
 	def validateMove(self, newSquare):
 		#calculate column and row difference

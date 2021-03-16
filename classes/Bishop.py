@@ -4,13 +4,9 @@ class Bishop(Piece):
 
 	#assumes square and color are correct values
 	def __init__(self, square, color):
-		super().__init__(square, color)
-		self.piece_chr = "♝" if self.color == "white" else "♗"
+		super().__init__(square, color, "♝" if color == "white" else "♗")
 		self.INCR = lambda x: x+1
 		self.DECR = lambda x: x-1
-
-	def __repr__(self):
-		return self.piece_chr
 
 	def validateMove(self, newSquare):
 		#calculate column and row difference

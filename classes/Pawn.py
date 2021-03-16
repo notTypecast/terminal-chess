@@ -5,15 +5,11 @@ class Pawn(Piece):
 
 	#assumes square and color are correct values
 	def __init__(self, square, color):
-		super().__init__(square, color)
-		self.piece_chr = "♟" if self.color == "white" else "♙"
+		super().__init__(square, color, "♟" if color == "white" else "♙")
 		self.row_comp_op = lambda x, y: (x >= y if self.color == "white" else x <= y)
 		self.attacking_row_op = lambda x: (x - 1 if self.color == "white" else x + 1)
 		self.enPassantSquare = None
 		self.enPassantUsed = False
-
-	def __repr__(self):
-		return self.piece_chr
 
 	def validateMove(self, newSquare):
 		#max row difference

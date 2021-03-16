@@ -6,13 +6,9 @@ class Queen(Piece):
 
 	#assumes square and color are correct values
 	def __init__(self, square, color):
-		super().__init__(square, color)
-		self.piece_chr = "♛" if self.color == "white" else "♕"
+		super().__init__(square, color, "♛" if color == "white" else "♕")
 		self.internalBishop = Bishop(self.square, self.color)
 		self.internalRook = Rook(self.square, self.color)
-
-	def __repr__(self):
-		return self.piece_chr
 
 	def validateMove(self, newSquare):
 		self._updateInternalPiecesSquare()
